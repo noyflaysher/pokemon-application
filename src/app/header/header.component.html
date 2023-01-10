@@ -1,27 +1,36 @@
 <header>
-    <img src="https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849__340.png" alt="pokemon img">
+  <div class="logo">
+    <img
+      src="https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849__340.png"
+      alt="pokemon img"
+    />
     <h1>Pokemon APP</h1>
-    <div class="header__search">
-        <label for="">search pokemon</label>
-        <input type="text" name="search" [(ngModel)]="searchText" placeholder="pokemon's name" (ngModelChange)="modelChange($event)">
+  </div>
 
-       
-        
+  <div class="search">
+    <div class="header__search">
+      <label for="">search pokemon</label>
+      <input
+        type="text"
+        name="search"
+        [(ngModel)]="searchText"
+        placeholder="pokemon's name"
+        (ngModelChange)="modelChange($event)"
+      />
     </div>
     <div class="select-form">
-        <mat-form-field appearance="fill" class="select" >
-            <mat-label>Select pokemon type</mat-label>
-            <mat-select (selectionChange)="onChange($event)" [(value)]="selected">
-              <mat-option value="">None</mat-option>
-              <mat-option  *ngFor="let type of types" value={{type}} >{{type}}</mat-option>
-            </mat-select>
-            
-          </mat-form-field>
-          <p class="selectType">You selected: {{selected}}</p>
+      <mat-form-field appearance="fill" class="select">
+        <mat-label class="select">Select pokemon type</mat-label>
+        <mat-select (selectionChange)="onChange($event)" [(value)]="selected">
+          <mat-option value="">None</mat-option>
+          <mat-option *ngFor="let type of types" value="{{ type }}">{{
+            type
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <p class="selectType">You selected: {{ selected }}</p>
     </div>
-   
-     
-    
-    
-    
+  </div>
+
+  <button (click)="logOut()">Log Out</button>
 </header>

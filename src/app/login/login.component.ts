@@ -17,7 +17,7 @@ export class LoginComponent {
     if (this.userEmail === this.userApprove) {
       let data = { isLogIn: true };
       localStorage.setItem('isLogIn', JSON.stringify(data));
-      this.router.navigate(['/home']);
+      this.router.navigate(['/']);
       console.log(`log in`);
     } else {
       this.wrongEmail = true;

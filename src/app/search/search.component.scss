@@ -1,0 +1,30 @@
+.search_history {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+
+  p {
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: red;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th {
+    background-color: yellow;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid;
+    padding: 7px;
+  }
+}

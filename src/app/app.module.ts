@@ -17,6 +17,8 @@ import { LoginComponent } from './login/login.component';
 import { SearchComponent } from './search/search.component';
 import { AppRoutingModule } from './app-routing-module';
 import { HomePageComponent } from './home-page/home-page.component';
+import { RouteServiceService } from './services/route-service.service';
+import { LoginActivateService } from './services/login-activate.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     NgxPaginationModule,
     AppRoutingModule,
   ],
-  providers: [DataService],
+  providers: [DataService, RouteServiceService, LoginActivateService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
