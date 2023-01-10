@@ -11,4 +11,7 @@
     />
     <button class="login_button" (click)="loginUser()">log in</button>
   </div>
+  <p class="login__email" *ngIf="this.wrongEmail === true">
+    Unauthorized email address
+  </p>
 </div>
