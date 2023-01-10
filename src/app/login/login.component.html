@@ -1,0 +1,14 @@
+<div class="login">
+  <p class="login_welcome">Welcome to pokemon website</p>
+  <p class="login_title">Please log in</p>
+  <div class="login_form">
+    <input
+      class="login_input"
+      type="text"
+      name="userEmail"
+      placeholder="enter your email"
+      [(ngModel)]="userEmail"
+    />
+    <button class="login_button" (click)="loginUser()">log in</button>
+  </div>
+</div>
