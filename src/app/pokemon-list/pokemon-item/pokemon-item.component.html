@@ -1,0 +1,4 @@
+<div *ngIf="pokemon.name.startsWith(this.searchNameChoose) && pokemon.type.startsWith(this.type)" class="pokemon-item" (click)="onSelected()">
+    <img [src]="pokemon.img" alt="pokemonImf">
+    <h1>{{pokemon.name}}</h1>
+</div>

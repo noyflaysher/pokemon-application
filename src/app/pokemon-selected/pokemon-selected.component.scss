@@ -1,0 +1,56 @@
+@import "../../functions.scss";
+
+.selectedPokemon{
+    @include flexBox(column,space-between);
+    border:4px red solid;
+    border-radius: 5px;
+    padding:30px;
+    width:40%;
+    height: 60%;
+    margin:auto;
+    z-index: 100;
+    position:fixed;
+    box-shadow:1px 1px 5px rgba(0,0,0.8,1) ;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: color(white);
+    font-size: 18px;
+    h1{
+        margin-top: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+    }
+    img{
+        width:300px;
+        height:280px
+    }
+    .selectedPokemon-details{
+        font-size: 23px;
+        margin-top: 25px;
+        width:100%;
+        display: flex;
+        flex:25%;
+        justify-content: space-between;
+    }
+    button{
+        position: relative;
+        left:-50%;
+        top:-2%;
+        border-radius: 6px;
+        background-color: color(yellow);
+        color:red;
+        border:red;
+        width:25px;
+        height:25px;
+        font-size: 20px;
+        cursor: pointer;
+        &:hover{
+            background-color:red;
+            color:yellow;
+        }
+    }
+    
+    
+}

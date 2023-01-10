@@ -1,0 +1,12 @@
+
+
+@function color($color-name){
+    @return var(--color-#{$color-name});
+}
+
+@mixin flexBox($direction, $justify){
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    flex-direction: $direction;
+}

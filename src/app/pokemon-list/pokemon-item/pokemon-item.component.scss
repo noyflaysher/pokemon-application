@@ -1,0 +1,25 @@
+@import "../../../functions.scss";
+
+.pokemon-item{
+    cursor: pointer;
+    text-align: center;
+    width:97%;
+    height: 250px;
+    box-shadow:1px 1px 5px rgba(0,0,0,0.5) ;
+    margin-left: 10px;
+    @include flexBox(column,center);
+    &:hover{
+        background-color: color(yellow);
+        transform: scale(1.05);
+    }
+    img{
+        width:200px;
+        height: 150px;
+    }
+    h1{
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+   
+    
+}

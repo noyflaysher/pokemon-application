@@ -1,0 +1,13 @@
+<div *ngIf="selectedPokemon" class="selectedPokemon">
+    <button (click)="close()" class="close">X</button>
+    <h1>{{selectedPokemon.name}}</h1>
+    <img [src]="selectedPokemon.img" alt="pokemonImf">
+    <div class="selectedPokemon-details">
+        <p><b>Type:</b> {{selectedPokemon.type}}</p>
+        <p><b>Height:</b> {{selectedPokemon.height}}</p>
+        <p><b>Health:</b> {{selectedPokemon.health}}</p>
+        <p><b>Attack Power:</b> {{selectedPokemon.attackPower}}</p>
+
+    </div>
+    
+</div>
