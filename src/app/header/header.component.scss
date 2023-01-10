@@ -32,6 +32,12 @@ header {
     flex-direction: column;
   }
 
+  .header_search-btn {
+    margin-left: 10px;
+    height: 35px;
+    width: 80px;
+  }
+
   .select-form {
     display: flex;
     // align-items: flex-start;

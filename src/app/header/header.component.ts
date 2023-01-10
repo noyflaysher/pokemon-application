@@ -14,6 +14,7 @@ export class HeaderComponent {
   searchText: string;
   index: number = 0;
   myDate: any;
+  search: any = '';
   types = [
     'Bug',
     'Dark',
@@ -44,23 +45,29 @@ export class HeaderComponent {
 
   modelChange(name) {
     this.dataService.searchName.emit(name);
-    let data = {
-      value: name,
-      date: formatDate(new Date(), 'yyyy/MM/dd', 'en').toString(),
-    };
-    localStorage.setItem(
-      `search${(this.index++ % 5) + 1}`,
-      JSON.stringify(data)
-    );
-
-    // console.log(formatDate(new Date(), 'yyyy/MM/dd', 'en'));
-    // this.myDate = Date.now();
-    // console.log(this.myDate);
+    this.search = name;
+    // let data = {
+    //   value: name,
+    //   date: formatDate(new Date(), 'yyyy/MM/dd', 'en').toString(),
+    // };
     // localStorage.setItem(
     //   `search${(this.index++ % 5) + 1}`,
-    //   this.datePipe.transform(this.myDate, 'yyyy-MM-dd')
+    //   JSON.stringify(data)
     // );
     console.log(`name: ${name}`);
+  }
+
+  onClick() {
+    let data = {
+      value: this.search,
+      date: formatDate(new Date(), 'yyyy/MM/dd', 'en').toString(),
+    };
+
+    localStorage.setItem(
+      `search${(this.dataService.searchindex % 5) + 1}`,
+      JSON.stringify(data)
+    );
+    this.dataService.searchindex = this.dataService.searchindex + 1;
   }
 
   onChange(type) {
