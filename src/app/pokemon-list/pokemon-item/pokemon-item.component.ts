@@ -33,16 +33,5 @@ export class PokemonItemComponent implements OnInit {
 
   onSelected() {
     this.dataService.pokemonSelected.emit(this.pokemon);
-    // let data = {
-    //   value: this.pokemon.name,
-    //   date: formatDate(new Date(), 'yyyy/MM/dd', 'en').toString(),
-    // };
-
-    // localStorage.setItem(
-    //   `search${(this.dataService.searchindex % 5) + 1}`,
-    //   JSON.stringify(data)
-    // );
-    // this.dataService.searchindex = this.dataService.searchindex + 1;
-    // console.log(`index: ${this.index}`);
   }
 }

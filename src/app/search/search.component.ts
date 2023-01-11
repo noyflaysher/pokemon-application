@@ -29,6 +29,4 @@ export class SearchComponent implements OnInit {
       ? JSON.parse(window.localStorage.getItem('search5'))
       : '';
   }
-
-  //
 }

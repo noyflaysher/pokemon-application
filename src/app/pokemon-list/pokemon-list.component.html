@@ -1,5 +1,7 @@
 <div class="pokemonsList">
-    <app-pokemon-item *ngFor="let pokemon of pokemons"  [pokemon]="pokemon" class="pokemon-item" ></app-pokemon-item>
+  <app-pokemon-item
+    *ngFor="let pokemon of pokemons"
+    [pokemon]="pokemon"
+    class="pokemon-item"
+  ></app-pokemon-item>
 </div>
-
-<!-- <pagination-controls (pageChange)="page= $event; pokemons=[]; getPokemonsArray()"></pagination-controls> -->

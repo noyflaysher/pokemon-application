@@ -54,7 +54,6 @@ export class HeaderComponent {
     //   `search${(this.index++ % 5) + 1}`,
     //   JSON.stringify(data)
     // );
-    console.log(`name: ${name}`);
   }
 
   onClick() {
@@ -72,9 +71,6 @@ export class HeaderComponent {
 
   onChange(type) {
     this.dataService.typeSelected.emit(type.value);
-    console.log(type.value);
-
-    // this.selected.emit({type:this.selected,});
   }
 
   logOut() {

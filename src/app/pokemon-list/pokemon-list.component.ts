@@ -5,27 +5,21 @@ import { DataService } from '../services/data.service';
 @Component({
   selector: 'app-pokemon-list',
   templateUrl: './pokemon-list.component.html',
-  styleUrls: ['./pokemon-list.component.scss']
+  styleUrls: ['./pokemon-list.component.scss'],
 })
-export class PokemonListComponent implements OnInit{
-  pokemons:Pokemon[]=[];
-  // page:number=1;
-  totalPokemons:number;
+export class PokemonListComponent implements OnInit {
+  pokemons: Pokemon[] = [];
+  totalPokemons: number;
 
-
-  constructor(private dataService:DataService){}
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
     this.getPokemonsArray();
-    this.pokemons=this.dataService.pokemons;
-    this.totalPokemons=this.dataService.totalPokemons;
-   
+    this.pokemons = this.dataService.pokemons;
+    this.totalPokemons = this.dataService.totalPokemons;
   }
 
-  getPokemonsArray(){
+  getPokemonsArray() {
     this.dataService.getPokemons();
   }
-
-
-
 }
