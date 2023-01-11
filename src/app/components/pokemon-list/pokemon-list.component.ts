@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Pokemon } from '../pokemon.model';
-import { DataService } from '../services/data.service';
+import { Pokemon } from '../../pokemon.model';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-pokemon-list',

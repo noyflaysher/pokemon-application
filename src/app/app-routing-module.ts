@@ -1,24 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { LoginComponent } from './login/login.component';
-import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
-import { SearchComponent } from './search/search.component';
-import { LoginActivateService } from './services/login-activate.service';
-import { RouteServiceService } from './services/route-service.service';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { LoginComponent } from './pages/login/login.component';
+// import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
+import { HisrotyComponent } from './pages/history/history.component';
+import { CanActivateGuard } from './guards/can-activate.guard';
 
 const appRoutes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    canActivate: [LoginActivateService],
   },
-  { path: 'search', component: SearchComponent },
+  { path: 'history', component: HisrotyComponent },
   {
     path: '',
     component: HomePageComponent,
-    canActivate: [RouteServiceService],
+    canActivate: [CanActivateGuard],
   },
 ];
 

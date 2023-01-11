@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss'],
+  selector: 'app-history',
+  templateUrl: './history.component.html',
+  styleUrls: ['./history.component.scss'],
 })
-export class SearchComponent implements OnInit {
+export class HisrotyComponent implements OnInit {
   search1: any = '';
   search2: any = '';
   search3: any = '';
