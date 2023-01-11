@@ -18,7 +18,6 @@ export class LoginComponent {
       let data = { isLogIn: true };
       localStorage.setItem('isLogIn', JSON.stringify(data));
       this.router.navigate(['/']);
-      console.log(`log in`);
     } else {
       this.wrongEmail = true;
     }
