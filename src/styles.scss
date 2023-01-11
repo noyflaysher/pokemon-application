@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 // Plus imports for other components in your app.
 @use "./functions.scss";
 
@@ -21,32 +20,34 @@ $pokemon-app-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$pokemon-app-theme: mat.define-light-theme((
-  color: (
-    primary: $pokemon-app-primary,
-    accent: $pokemon-app-accent,
-    warn: $pokemon-app-warn,
+$pokemon-app-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $pokemon-app-primary,
+      accent: $pokemon-app-accent,
+      warn: $pokemon-app-warn,
+    ),
   )
-));
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($pokemon-app-theme);
 
-
-
-
-:root{
-    --color-primary:rgb(204, 6, 6);
-    --color-black:#000000;
-    --color-white:#FFFFFF;
-    --color-secondary:#A9A9A9;
-    --color-yellow:#FFD700;
+:root {
+  --color-primary: rgb(204, 6, 6);
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-secondary: #cec6c6;
+  --color-yellow: #ffd700;
 }
 
-
-
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

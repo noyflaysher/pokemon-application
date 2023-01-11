@@ -3,53 +3,73 @@
 .login_welcome {
   margin: auto;
   text-transform: uppercase;
+  margin-top: 100px;
 }
 
 .login {
   margin: auto;
-  width: 40%;
-  border: 1px solid black;
-  padding: 20px;
-  margin-top: 15px;
   text-align: center;
+  background-color: color(white);
+  height: 100%;
+
+  .header {
+    padding: 20px 50px;
+    text-align: center;
+    background-color: color(primary);
+    @include flexBox(row, flex-start);
+    color: color(white);
+
+    img {
+      width: 50px;
+      height: 50px;
+      margin-right: 15px;
+    }
+  }
 
   .login_welcome {
-    margin: auto;
     text-transform: uppercase;
     font-size: 27px;
     font-weight: 700;
     margin-bottom: 35px;
   }
 
-  &_title {
-    text-transform: uppercase;
-
-    font-size: 23px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    margin-bottom: 50px;
-  }
-
   &_form {
-    @include flexBox(center, center);
-  }
+    margin: auto;
+    width: 40%;
+    border: 3px solid black;
+    padding: 50px 25px;
+    @include flexBox(column, center);
 
-  input {
-    margin-right: 5px;
-    width: 50%;
-    font-size: 15px;
-  }
+    .login_title {
+      text-transform: uppercase;
+      font-size: 23px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 50px;
+    }
 
-  &_button {
-    cursor: pointer;
-    height: 23px;
-    width: 10%;
-    font-family: inherit;
-    font-size: 15px;
+    &-row {
+      @include flexBox(row, center);
 
-    &:hover {
-      background-color: red;
-      //   color: yellow;
+      input {
+        margin-right: 10px;
+        width: 300px;
+        font-size: 15px;
+        height: 22px;
+      }
+
+      .login_button {
+        cursor: pointer;
+        height: 23px;
+        width: 20%;
+        font-family: inherit;
+        font-size: 15px;
+
+        &:hover {
+          background-color: red;
+          font-family: inherit;
+        }
+      }
     }
   }
 
