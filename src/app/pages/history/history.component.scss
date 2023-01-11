@@ -1,0 +1,52 @@
+@import "src/functions.scss";
+
+.search_history {
+  text-align: center;
+  margin: auto;
+  width: 100%;
+
+  .header {
+    padding: 20px 50px;
+    text-align: center;
+    background-color: color(primary);
+    @include flexBox(row, flex-start);
+    color: color(white);
+    align-items: center;
+
+    img {
+      width: 50px;
+      height: 50px;
+      margin-right: 15px;
+    }
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  p {
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: rgb(0, 0, 0);
+  }
+
+  table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 70%;
+  }
+
+  th {
+    background-color: yellow;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid;
+    padding: 7px;
+  }
+}

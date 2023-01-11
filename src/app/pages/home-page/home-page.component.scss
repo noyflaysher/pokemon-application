@@ -1,0 +1,11 @@
+.select-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+
+  .select {
+    margin-right: 30px;
+    width: 25%;
+  }
+}

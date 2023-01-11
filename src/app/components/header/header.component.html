@@ -1,0 +1,25 @@
+<header>
+  <div class="logo">
+    <img
+      src="https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849__340.png"
+      alt="pokemon img"
+    />
+    <h1>Pokemon APP</h1>
+  </div>
+
+  <div class="header__search">
+    <!-- <label for="">search pokemon</label> -->
+    <input
+      type="text"
+      name="search"
+      [(ngModel)]="searchText"
+      placeholder="pokemon's name"
+      (ngModelChange)="modelChange($event)"
+    />
+    <button class="header_search-btn" (click)="onClick()">search</button>
+  </div>
+  <div class="header_buttons">
+    <button (click)="history()">History</button>
+    <button (click)="logOut()">Log Out</button>
+  </div>
+</header>
