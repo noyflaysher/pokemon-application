@@ -1,7 +1,8 @@
+<button class="home-btn" [routerLink]="['/']">To the home page</button>
 <div class="map_header">
   <input id="autocomplete" placeholder="Enter a place" type="text" />
   <button (click)="clearMap()">Clear markers</button>
-  <button (click)="direction()">Direction</button>
+  <button (click)="setDirection()">Direction</button>
 </div>
 <div id="style-selector-control" class="map-control">
   <select id="style-selector" class="selector-control">

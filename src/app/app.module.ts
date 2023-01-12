@@ -20,6 +20,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 
 import { CanActivateGuard } from './guards/can-activate.guard';
 import { MyMapComponent } from './pages/my-map/my-map.component';
+import { CanActivate2Guard } from './guards/can-activate2.guard';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { MyMapComponent } from './pages/my-map/my-map.component';
     NgxPaginationModule,
     AppRoutingModule,
   ],
-  providers: [DataService, CanActivateGuard],
+  providers: [DataService, CanActivateGuard, CanActivate2Guard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

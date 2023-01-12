@@ -1,7 +1,8 @@
+@import "../../../functions.scss";
+
 .select-form {
-  display: flex;
+  @include flexBox(row, center);
   align-items: center;
-  justify-content: center;
   margin-top: 15px;
 
   .select {

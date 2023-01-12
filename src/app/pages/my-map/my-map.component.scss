@@ -1,7 +1,15 @@
+@import "../../../functions.scss";
+
 #map {
   height: 700px;
   width: 70%;
   margin: auto;
+}
+
+.home-btn {
+  margin-top: 30px;
+  margin-left: 30px;
+  height: 30px;
 }
 
 .map_header {
@@ -9,7 +17,7 @@
   display: flex;
   justify-content: space-between;
   width: 50%;
-  margin-top: 70px;
+  margin-top: 50px;
   margin-bottom: 20px;
 
   input {
@@ -17,6 +25,8 @@
     margin-right: 10px;
     height: 30px;
     flex: 1;
+    font-size: 16px;
+    font-family: inherit;
   }
   button {
     cursor: pointer;
@@ -27,4 +37,20 @@
 .selector-control {
   margin-top: 10px;
   height: 40px;
+  font-size: 16px;
+}
+
+button {
+  background-color: rgb(93, 144, 240);
+  color: color(white);
+  border: none;
+  border-radius: 3px;
+  font-size: 17px;
+  font-weight: 500;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  &:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 2);
+    transform: scale(1.02);
+  }
 }

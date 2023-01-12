@@ -47,12 +47,4 @@ export class HeaderComponent {
     localStorage.setItem('isLogIn', JSON.stringify(data));
     this.router.navigate(['/login']);
   }
-
-  history() {
-    this.router.navigate(['/history']);
-  }
-
-  map() {
-    this.router.navigate(['/my-map']);
-  }
 }

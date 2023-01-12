@@ -1,5 +1,4 @@
 /// <reference types="@types/googlemaps" />
-import { ThisReceiver } from '@angular/compiler';
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
@@ -10,7 +9,6 @@ import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 export class MyMapComponent implements AfterViewInit {
   @ViewChild('mapContainer', { static: false }) gmap: ElementRef;
   map: google.maps.Map;
-
   markers = [];
   autocompleteInput: HTMLInputElement;
   autocomplete: any;
@@ -19,6 +17,7 @@ export class MyMapComponent implements AfterViewInit {
   coordinates = new google.maps.LatLng(32.062580814098304, 34.77145279462957);
   directionsService: any;
   directionsRenderer: any;
+  bounds: any;
 
   styles: Record<string, google.maps.MapTypeStyle[]> = {
     default: [],
@@ -308,13 +307,6 @@ export class MyMapComponent implements AfterViewInit {
     this.mapInitializer();
   }
 
-  clearMap() {
-    this.markers.forEach((marker) => {
-      marker.setMap(null);
-    });
-    this.markers = [];
-  }
-
   mapInitializer() {
     this.directionsService = new google.maps.DirectionsService();
     this.directionsRenderer = new google.maps.DirectionsRenderer({
@@ -337,6 +329,8 @@ export class MyMapComponent implements AfterViewInit {
       center: this.coordinates,
       zoom: 8,
     };
+
+    this.bounds = new google.maps.LatLngBounds();
     this.map = new google.maps.Map(this.gmap.nativeElement, mapOptions);
 
     const options = {
@@ -344,6 +338,11 @@ export class MyMapComponent implements AfterViewInit {
       componentRestrictions: { country: 'IL' },
       fields: ['address_components', 'geometry', 'icon', 'name'],
     };
+
+    this.autocomplete = new google.maps.places.Autocomplete(
+      this.autocompleteInput,
+      options
+    );
 
     this.map.setOptions({ styles: this.styles[this.styleSelector.value] });
 
@@ -355,13 +354,6 @@ export class MyMapComponent implements AfterViewInit {
       this.map.setOptions({ styles: this.styles[this.styleSelector.value] });
     });
 
-    this.autocomplete = new google.maps.places.Autocomplete(
-      this.autocompleteInput,
-      options
-    );
-
-    const bounds = new google.maps.LatLngBounds();
-
     this.autocomplete.bindTo('bounds', this.map);
 
     this.markers.push(
@@ -371,39 +363,39 @@ export class MyMapComponent implements AfterViewInit {
       })
     );
 
-    this.autocomplete.addListener('place_changed', () => {
-      let place = this.autocomplete.getPlace();
-      this.markers.push(
-        new google.maps.Marker({
-          title: place.name,
-          map: this.map,
-          position: place.geometry.location,
-        })
-      );
-
-      if (place.geometry.viewport) {
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
-
-      this.autocompleteInput.innerHTML = '';
-      this.map.fitBounds(bounds);
-    });
+    this.autocomplete.addListener(
+      'place_changed',
+      this.placeChanges.bind(this)
+    );
 
     this.directionsRenderer.setMap(this.map);
   }
 
-  direction() {
-    console.log(this.directionsRenderer);
+  placeChanges() {
+    let place = this.autocomplete.getPlace();
+    this.markers.push(
+      new google.maps.Marker({
+        title: place.name,
+        map: this.map,
+        position: place.geometry.location,
+      })
+    );
+    if (place.geometry.viewport) {
+      this.bounds.union(place.geometry.viewport);
+    }
+    this.map.fitBounds(this.bounds);
+  }
+
+  clearMap() {
+    this.markers.forEach((marker) => {
+      marker.setMap(null);
+    });
+    this.markers = [];
+  }
+
+  setDirection() {
     let start = 'HaTizmoret St 42';
     let end = 'Lilienblum St 31';
-    let request = {
-      origin: start,
-      destination: end,
-      travelMode: 'DRIVING',
-    };
-    console.log('1111');
     this.directionsService.route(
       {
         origin: start,
@@ -411,10 +403,8 @@ export class MyMapComponent implements AfterViewInit {
         travelMode: 'DRIVING',
       },
       (response, status) => {
-        console.log('222');
         if (status === 'OK') {
           this.directionsRenderer.setDirections(response);
-          console.log('333');
         } else {
           window.alert('Directions request failed due to ' + status);
         }
