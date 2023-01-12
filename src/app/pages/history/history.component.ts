@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-history',
@@ -11,6 +12,8 @@ export class HisrotyComponent implements OnInit {
   search3: any = '';
   search4: any = '';
   search5: any = '';
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.search1 = window.localStorage.getItem('search1')
@@ -28,5 +31,9 @@ export class HisrotyComponent implements OnInit {
     this.search5 = window.localStorage.getItem('search1')
       ? JSON.parse(window.localStorage.getItem('search5'))
       : '';
+  }
+
+  toHomePage() {
+    this.router.navigate(['/']);
   }
 }

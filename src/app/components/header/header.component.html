@@ -8,7 +8,6 @@
   </div>
 
   <div class="header__search">
-    <!-- <label for="">search pokemon</label> -->
     <input
       type="text"
       name="search"
@@ -19,8 +18,8 @@
     <button class="header_search-btn" (click)="onClick()">search</button>
   </div>
   <div class="header_buttons">
-    <button (click)="map()">Map</button>
-    <button (click)="history()">History</button>
-    <button (click)="logOut()">Log Out</button>
+    <button [routerLink]="['/My-Map']">Map</button>
+    <button [routerLink]="['/history']">History</button>
+    <button [routerLink]="['/login']" (click)="logOut()">Log Out</button>
   </div>
 </header>
