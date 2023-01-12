@@ -19,6 +19,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 
 import { CanActivateGuard } from './guards/can-activate.guard';
+import { MyMapComponent } from './pages/my-map/my-map.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CanActivateGuard } from './guards/can-activate.guard';
     LoginComponent,
     HisrotyComponent,
     HomePageComponent,
+    MyMapComponent,
   ],
   imports: [
     HttpClientModule,

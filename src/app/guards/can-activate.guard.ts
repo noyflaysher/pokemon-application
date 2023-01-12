@@ -9,7 +9,9 @@ export class CanActivateGuard implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate() {
-    this.logIn = JSON.parse(window.localStorage.getItem('isLogIn')).isLogIn;
+    this.logIn = window.localStorage.getItem('isLogIn')
+      ? JSON.parse(window.localStorage.getItem('isLogIn')).isLogIn
+      : '';
     if (!this.logIn) {
       this.router.navigate(['/login']);
       return false;

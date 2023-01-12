@@ -51,4 +51,8 @@ export class HeaderComponent {
   history() {
     this.router.navigate(['/history']);
   }
+
+  map() {
+    this.router.navigate(['/my-map']);
+  }
 }

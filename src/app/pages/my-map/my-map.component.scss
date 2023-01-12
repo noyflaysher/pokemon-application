@@ -1,0 +1,30 @@
+#map {
+  height: 700px;
+  width: 70%;
+  margin: auto;
+}
+
+.map_header {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin-top: 70px;
+  margin-bottom: 20px;
+
+  input {
+    width: 30%;
+    margin-right: 10px;
+    height: 30px;
+    flex: 1;
+  }
+  button {
+    cursor: pointer;
+    margin-right: 7px;
+  }
+}
+
+.selector-control {
+  margin-top: 10px;
+  height: 40px;
+}
