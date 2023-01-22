@@ -60,10 +60,13 @@
 
       .login_button {
         cursor: pointer;
-        height: 23px;
+        height: 29px;
         width: 20%;
         font-family: inherit;
         font-size: 15px;
+        background-color: black;
+        color: white;
+        border: red 2px solid;
 
         &:hover {
           background-color: red;

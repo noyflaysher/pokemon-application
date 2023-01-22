@@ -15,7 +15,6 @@ export class HeaderComponent {
   index: number = 0;
   myDate: any;
   search: any = '';
-
   selected: string = ' ';
   selectedValue: string;
   constructor(
