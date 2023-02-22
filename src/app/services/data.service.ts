@@ -36,7 +36,7 @@ export class DataService {
             );
           });
         });
-        this.removeDuplicatePokemons(this.pokemons);
+        // this.removeDuplicatePokemons(this.pokemons);
       });
   }
 

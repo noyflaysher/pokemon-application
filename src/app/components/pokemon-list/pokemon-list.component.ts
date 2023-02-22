@@ -15,11 +15,14 @@ export class PokemonListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPokemonsArray();
+
     this.pokemons = this.dataService.pokemons;
     this.totalPokemons = this.dataService.totalPokemons;
   }
 
   getPokemonsArray() {
+    this.dataService.pokemons = [];
     this.dataService.getPokemons();
+    // this.dataService.removeDuplicatePokemons(this.pokemons);
   }
 }
