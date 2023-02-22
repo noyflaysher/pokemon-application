@@ -36,10 +36,23 @@ export class DataService {
             );
           });
         });
+        this.removeDuplicatePokemons(this.pokemons);
       });
   }
 
   getPokemon(name: string) {
     return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
+  }
+
+  removeDuplicatePokemons(pokemons) {
+    const uniquePokemons = new Set();
+    return pokemons.filter((pokemon) => {
+      if (uniquePokemons.has(pokemon.name)) {
+        return false;
+      } else {
+        uniquePokemons.add(pokemon.name);
+        return true;
+      }
+    });
   }
 }
